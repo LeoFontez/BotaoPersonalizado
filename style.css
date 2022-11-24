@@ -1,0 +1,40 @@
+.botao {
+  margin-left: 50px;
+  margin-top: 50px;
+  --color: red;
+  color: black;
+  position: relative;
+  display: inline-block;
+  texto-decoration: none;
+  font-size: 25px;
+  padding: 20px 50px;
+  border: 3px solid var(--color);
+}
+
+.botao::before,
+.botao::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: width .25s .15s, height .25s;  
+}
+
+.botao::before{
+  top: -15px;
+  left: -15px;
+  border-width: 3px 0 0 3px;
+}
+
+.botao::after{
+  bottom: -15px;
+  right: -15px;
+  border-width: 0 3px 3px 0;
+}
+
+.botao:hover::after,
+.botao:hover::before{
+  width: calc(100% + 27px);
+  height: calc(100% + 27px);
+}
